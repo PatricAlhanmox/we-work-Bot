@@ -33,8 +33,8 @@ def foo1():
 def foo2():
     wBot(url)\
         .set_text("every 30 seconds")\
-        .set_mentioned_list(["wangqing", "@all"])\
-        .set_mentioned_mobile_list(["13800001111", "@all"])\
+        .set_mentioned_list(["@all"])\
+        .set_mentioned_mobile_list(["@all"])\
         .every(30)\
         .run()
 

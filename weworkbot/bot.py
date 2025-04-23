@@ -83,8 +83,20 @@ class Bot(Thread):
         self.__set_content(text, type)
         return self
 
+    def check_pic(self, path):
+        data = open(path, 'rb').read(32)
+        if data[6:10] in (b'JFIE',b'Exif'):
+            self.__set_content(path, type='image')
+            return self
+        elif data.startswith(b'\211PNG\r\n\032\n'):
+            self.__set_content(path, type='image')
+            return self
+        else:
+            return self
+
     def set_image_path(self, path):
         # TODO: check format of the file. Only png&jpg supported
+        #path = 'E:\VSCODE\python\we-work-Bot\weworkbot\img.jpg'
         self.__set_content(path, type='image')
         return self
 

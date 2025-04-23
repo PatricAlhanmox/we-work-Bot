@@ -110,5 +110,5 @@ def days():
 if __name__ == '__main__':
     today_pf = MornOrNoon()
     if today_pf == 1:
-        time.sleep(28500)
+        time.sleep(3600*5+58*60)
     every_time_send_msg(today_pf)
